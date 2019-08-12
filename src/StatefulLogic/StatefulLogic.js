@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {getLoggedInUser} from '../utils'
 
 /*
@@ -14,4 +14,11 @@ import {getLoggedInUser} from '../utils'
   Кнопка должна получать onClick коллбек из компонента-обёртки
 */
 
-export const WithTooltip = () => {}
+export const WithTooltip = (onClick) => {
+  return (
+    <Fragment>
+      <div data-testid="tooltip">Hello, i'm Tooltip</div>
+      <button onClick={onClick}>I must have tooltip</button>
+    </Fragment>
+  );
+};
