@@ -18,4 +18,7 @@ import {getLoggedInUser} from '../utils'
   const user = getLoggedInUser()
 */
 
-export const WithLoggedInUser = () => {}
+export const WithLoggedInUser = (props) => {
+  const user = getLoggedInUser();
+  return props.children(user);
+};
